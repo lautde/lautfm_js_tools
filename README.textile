@@ -32,14 +32,10 @@ wobei OPTIONS @limit@ und/oder @offset@ sein können.
 
 <pre><code>laut.fm.station('eins').info(callback)</code></pre>
 
-wobei OPTIONS @limit@ und/oder @offset@ sein können.
-
 * "Demo":http://lautde.github.com/lautfm_js_tools/station.info.html
 * "API URL":http://api.laut.fm/station/eins
 
 <pre><code>laut.fm.station('eins').current_song(callback)</code></pre>
-
-wobei OPTIONS @limit@ und/oder @offset@ sein können.
 
 * "Demo":http://lautde.github.com/lautfm_js_tools/station.current_song.html
 * "API URL":http://api.laut.fm/station/eins/current_song
