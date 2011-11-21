@@ -9,9 +9,12 @@
     <div id="container"></div>
     
     <script type="text/javascript" charset="utf-8">
+      var container = document.getElementById('container');
       
       laut.fm.genres(function(genres){
-        document.getElementById('container').innerHTML = genres.join(', ');
+        for (i in genres) {
+          container.innerHTML = container.innerHTML + genres[i].name + ', ';
+        }
       });
       
     </script>
