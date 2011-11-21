@@ -6,13 +6,15 @@
     <script type="text/javascript" src="http://api.laut.fm/js_tools/lautfm_js_tools.0.2.0.js" ></script>
   </head>
   <body>
-    <div id="container">
+    <div id="container"></div>
+    
     <script type="text/javascript" charset="utf-8">
       
       laut.fm.station_names(function(names){
-        document.getElementById('container').innerText = names.join(', ');
+        document.getElementById('container').innerHTML = names.join(', ');
       });
       
     </script>
+    
   </body>
 </html>
