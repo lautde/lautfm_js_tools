@@ -12,8 +12,8 @@
       var container = document.getElementById('container');
       
       var show_stations = function(stations){
-        for (i in stations) {
-          var station = stations[i];
+        for (i in stations.items) {
+          var station = stations.items[i];
           container.innerHTML = container.innerHTML +
                                 '<li>' +
                                   station.name +
