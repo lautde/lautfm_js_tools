@@ -2,6 +2,22 @@ h1. laut.fm Javascript API Wrapper
 
 Javascript-Bibliothek zur Benutzung der "laut.fm API":http://api.laut.fm.
 
+Achtung: Beta-Software. Bei Problemen bitte "Issue" öffnen oder im "laut.fm Mixxt Forum melden":http://laut.fm.mixxt.de/.
+
+h2. Eine Liste aller API-Resourcen, die über den Javascript-Wrapper bereitgestellt werden:
+
+<pre><code>laut.fm.letters(function(letters){ ... })</code></pre>
+
+* "Demo":http://lautde.github.com/lautfm_js_tools/letters.html
+* "API URL":http://api.laut.fm/letters
+
+<pre><code>laut.fm.genres(function(genres){ ... })</code></pre>
+
+* "Demo":http://lautde.github.com/lautfm_js_tools/genres.html
+* "API URL":http://api.laut.fm/genres
+
 <pre><code>laut.fm.station_names(function(names){ ... })</code></pre>
-"Demo":http://lautde.github.com/lautfm_js_tools/station_names.html
+
+* "Demo":http://lautde.github.com/lautfm_js_tools/station_names.html
+* "API URL":http://api.laut.fm/station_names
 
