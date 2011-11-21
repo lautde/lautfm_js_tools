@@ -6,19 +6,18 @@
     <script type="text/javascript" src="http://api.laut.fm/js_tools/lautfm_js_tools.0.2.0.js" ></script>
   </head>
   <body>
-    <div id="container"></div>
+    <ul id="container"></ul>
     
     <script type="text/javascript" charset="utf-8">
       var container = document.getElementById('container');
       
-      var show_genres = function(genres){
-        for (i in genres) {
-          var genre = genres[i];
-          container.innerHTML = container.innerHTML + genre.name + ', ';
+      var show_station = function(station){
+        for (attr in station) {
+          container.innerHTML = container.innerHTML + '<li>' + attr + ': ' + station[attr] + '</li>';
         }
       }
       
-      laut.fm.genres(show_genres);
+      laut.fm.station('eins').info(show_station);
     </script>
     
   </body>
