@@ -1,51 +1,90 @@
-h1. laut.fm Javascript API Wrapper
+h1. laut.fm Javascript API Tools
 
 Javascript-Bibliothek zur Benutzung der "laut.fm API":http://api.laut.fm.
 
 Achtung: Beta-Software. Bei Problemen bitte "Issue" öffnen oder im "laut.fm Mixxt Forum melden":http://laut.fm.mixxt.de/.
 
-h2. Eine Liste aller API-Resourcen, die über den Javascript-Wrapper bereitgestellt werden:
+h2. Features
+
+* Sämtliche API-Call gehen über CORS ("Cross Origin Resource Sharing":http://en.wikipedia.org/wiki/Cross-Origin_Resource_Sharing). Die Unterschiede zwischen den Internet-Explorern und modernen Browsern gleichen die laut.fm API Tools aus.
+* Uhrzeiten werden in Javascript Time-Objekte konvertiert.
+* Einzel-Stations-Infos und Song-Infos können automatisch wiederholt abgerufen werden.
+* Uhrzeit-Unterschiede zwischen Server und Client werden erkannt und die nötigen Offsets automatisch eingerechnet.
+* Ein UI-loser "flowplayer":http://flowplayer.org wird in einem Player-Objekt bereitgestellt, gesteuert über eine Javascript-Schnittstelle. Es können Songwechsel-Callbacks angegeben werden.
+* Keine weiteren Abhängigkeiten
+
+h2. Einschränkungen
+
+* CORS-Requests werden unterstützt durch alle modernen Browser außer Opera. Soweit abzusehen bekommt Opera "CORS-Support ab Version 12":http://my.opera.com/core/blog/2011/10/28/cors-goes-mainline.
+
+h2. Über den Javascript-Wrapper bereitgestellt API-Resourcen
+
+
+h3. Allgmeine Resourcen
 
 <pre><code>laut.fm.letters(callback)</code></pre>
 
-* "Demo":http://lautde.github.com/lautfm_js_tools/letters.html
-* "API URL":http://api.laut.fm/letters
+* "Demo":http://lautde.github.com/lautfm_js_tools/letters.html ("API URL":http://api.laut.fm/letters)
 
 <pre><code>laut.fm.genres(callback)</code></pre>
 
-* "Demo":http://lautde.github.com/lautfm_js_tools/genres.html
-* "API URL":http://api.laut.fm/genres
+* "Demo":http://lautde.github.com/lautfm_js_tools/genres.html ("API URL":http://api.laut.fm/genres)
 
 <pre><code>laut.fm.station_names(callback)</code></pre>
 
-* "Demo":http://lautde.github.com/lautfm_js_tools/station_names.html
-* "API URL":http://api.laut.fm/station_names
+* "Demo":http://lautde.github.com/lautfm_js_tools/station_names.html ("API URL":http://api.laut.fm/station_names)
+
+
+h3. Stations-Auflistungen
+
+@OPTIONS@: @limit@ und/oder @offset@
 
 <pre><code>laut.fm.stations.all(callback[, OPTIONS])</code></pre>
 
-wobei OPTIONS @limit@ und/oder @offset@ sein können.
+* "Demo":http://lautde.github.com/lautfm_js_tools/stations.all.html ("API URL":http://api.laut.fm/stations) (Achtung: Dauert etwas zu laden)
+* "Demo mit limit":http://lautde.github.com/lautfm_js_tools/stations.all_limit10.html ("API URL":http://api.laut.fm/stations?limit=10)
+* "Demo mit limit und offset":http://lautde.github.com/lautfm_js_tools/stations.all_limit10_offset25.html ("API URL":http://api.laut.fm/stations?limit=10&offset=25)
 
-* "Demo":http://lautde.github.com/lautfm_js_tools/stations.all.html
-* "Demo mit limit":http://lautde.github.com/lautfm_js_tools/stations.all_limit10.html
-* "Demo mit limit und offset":http://lautde.github.com/lautfm_js_tools/stations.all_limit10_offset25.html
-* "API URL":http://api.laut.fm/station_names
+<pre><code>laut.fm.stations.letter(LETTER, callback[, OPTIONS])</code></pre>
 
-<pre><code>laut.fm.station('eins').info(callback)</code></pre>
+* "Demo":http://lautde.github.com/lautfm_js_tools/stations.letter_b.html ("API URL":http://api.laut.fm/stations/letter/b)
+* "Demo mit limit":http://lautde.github.com/lautfm_js_tools/stations.letter_b_limit10.html ("API URL":http://api.laut.fm/stations/letter/b?limit=10)
+* "Demo mit limit und offset":http://lautde.github.com/lautfm_js_tools/stations.letter_b_limit10_offset5.html ("API URL":http://api.laut.fm/stations/letter/b?limit=10&offset=5)
+* "Demo mit Zahl":http://lautde.github.com/lautfm_js_tools/stations.letter_#.html ("API URL":http://api.laut.fm/stations/numbers)
 
-* "Demo":http://lautde.github.com/lautfm_js_tools/station.info.html
-* "API URL":http://api.laut.fm/station/eins
+<pre><code>laut.fm.stations.numbers(callback[, OPTIONS])</code></pre>
+
+* "Demo":http://lautde.github.com/lautfm_js_tools/stations.numbers.html ("API URL":http://api.laut.fm/stations/numbers)
+
+<pre><code>laut.fm.stations.genre(GENRE, callback[, OPTIONS])</code></pre>
+
+@GENRE@ muss eins der Genres von @laut.fm.genres()@ sein.
+
+* "Demo":http://lautde.github.com/lautfm_js_tools/stations.genre_ROCK.html ("API URL":http://api.laut.fm/stations/genre/Rock) (Achtung: Dauert etwas zu laden)
+* "Demo mit limit":http://lautde.github.com/lautfm_js_tools/stations.genre_ROCK_limit10.html ("API URL":http://api.laut.fm/stations/genre/Rock?limit=10)
+* "Demo mit limit und offset":http://lautde.github.com/lautfm_js_tools/stations.genre_ROCK_limit10_offset5.html ("API URL":http://api.laut.fm/stations/genre/Rock?limit=10&offset=5)
+* "Demo mit Zahl":http://lautde.github.com/lautfm_js_tools/stations.letter_#.html ("API URL":http://api.laut.fm/stations/numbers) (Achtung: Dauert etwas zu laden)
+
+<pre><code>laut.fm.stations.genre(NAMES, callback)</code></pre>
+
+@NAMES@ müssen Sendernamen sein, als String Komma-separiert oder als Array.
+
+* "Demo":http://lautde.github.com/lautfm_js_tools/stations.names.html ("API URL":http://api.laut.fm/stations/eins,deepgroove,best_of_80s)
+
+
+h3. Einzel-Stations-Infos
+
+<pre><code>laut.fm.station('NAME').info(callback)</code></pre>
+
+* "Demo":http://lautde.github.com/lautfm_js_tools/station.info.html ("API URL":http://api.laut.fm/station/eins)
 
 <pre><code>laut.fm.station('eins').current_song(callback)</code></pre>
 
-* "Demo":http://lautde.github.com/lautfm_js_tools/station.current_song.html
-* "API URL":http://api.laut.fm/station/eins/current_song
-
+* "Demo":http://lautde.github.com/lautfm_js_tools/station.current_song.html ("API URL":http://api.laut.fm/station/eins/current_song)
 
 
 
 (notes to myself)
 
-* CORS
-* Dates
-* Time offsets
-
+* URL http://www.laut.fm/js/flowplayer-3.2.7.swf"
+* flowplayer update
