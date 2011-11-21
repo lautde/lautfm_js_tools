@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>laut.fm JS tools demo</title>
+    <meta content='text/html;charset=utf-8' http-equiv='content-type'>
+    <script type="text/javascript" src="http://api.laut.fm/js_tools/lautfm_js_tools.0.2.0.js" ></script>
+  </head>
+  <body>
+    <ul id="container"></ul>
+    
+    <script type="text/javascript" charset="utf-8">
+      var container = document.getElementById('container');
+      
+      var show_stations = function(stations){
+        for (i in stations) {
+          var station = stations[i];
+          container.innerHTML = container.innerHTML +
+                                '<li>' +
+                                  station.name +
+                                  ' (' +
+                                  station.format +
+                                ')</li>';
+        }
+      };
+      
+      laut.fm.stations.genre('Rock', show_stations);
+    </script>
+    
+  </body>
+</html>
