@@ -3,4 +3,5 @@ h1. laut.fm Javascript API Wrapper
 Javascript-Bibliothek zur Benutzung der "laut.fm API":http://api.laut.fm.
 
 <pre><code>laut.fm.station_names(function(names){ ... })</code></pre>
+"Demo":http://lautde.github.com/lautfm_js_tools/station_names.html
 
