@@ -1,0 +1,18 @@
+#!/bin/sh
+
+if [ ! "$#" -eq 1 ]; then
+  echo "only argument is the tagname"
+  echo "you gave me $# arguments"
+  exit
+fi
+
+TAG=$1
+
+echo "tagging  ${TAG}..."
+`git tag -a ${TAG} -m "Tagging ${TAG}"`
+
+echo "copying tagged version..."
+`git show ${TAG}:lautfm_js_tools.js > lautfm_js_tools.${TAG}.js`
+
+echo
+echo "Now push with git push --tags and copy the tag-versioned file wherever"
