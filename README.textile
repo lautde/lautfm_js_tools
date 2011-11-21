@@ -6,18 +6,50 @@ Achtung: Beta-Software. Bei Problemen bitte "Issue" öffnen oder im "laut.fm Mix
 
 h2. Eine Liste aller API-Resourcen, die über den Javascript-Wrapper bereitgestellt werden:
 
-<pre><code>laut.fm.letters(function(letters){ ... })</code></pre>
+<pre><code>laut.fm.letters(callback)</code></pre>
 
 * "Demo":http://lautde.github.com/lautfm_js_tools/letters.html
 * "API URL":http://api.laut.fm/letters
 
-<pre><code>laut.fm.genres(function(genres){ ... })</code></pre>
+<pre><code>laut.fm.genres(callback)</code></pre>
 
 * "Demo":http://lautde.github.com/lautfm_js_tools/genres.html
 * "API URL":http://api.laut.fm/genres
 
-<pre><code>laut.fm.station_names(function(names){ ... })</code></pre>
+<pre><code>laut.fm.station_names(callback)</code></pre>
 
 * "Demo":http://lautde.github.com/lautfm_js_tools/station_names.html
 * "API URL":http://api.laut.fm/station_names
+
+<pre><code>laut.fm.stations.all(callback[, OPTIONS])</code></pre>
+
+wobei OPTIONS @limit@ und/oder @offset@ sein können.
+
+* "Demo":http://lautde.github.com/lautfm_js_tools/stations.all.html
+* "Demo mit limit":http://lautde.github.com/lautfm_js_tools/stations.all_limit10.html
+* "Demo mit limit und offset":http://lautde.github.com/lautfm_js_tools/stations.all_limit10_offset25.html
+* "API URL":http://api.laut.fm/station_names
+
+<pre><code>laut.fm.station('eins').info(callback)</code></pre>
+
+wobei OPTIONS @limit@ und/oder @offset@ sein können.
+
+* "Demo":http://lautde.github.com/lautfm_js_tools/station.info.html
+* "API URL":http://api.laut.fm/station/eins
+
+<pre><code>laut.fm.station('eins').current_song(callback)</code></pre>
+
+wobei OPTIONS @limit@ und/oder @offset@ sein können.
+
+* "Demo":http://lautde.github.com/lautfm_js_tools/station.current_song.html
+* "API URL":http://api.laut.fm/station/eins/current_song
+
+
+
+
+(notes to myself)
+
+* CORS
+* Dates
+* Time offsets
 
