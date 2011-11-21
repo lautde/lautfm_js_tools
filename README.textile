@@ -19,53 +19,55 @@ h2. Einschränkungen
 
 h2. Über den Javascript-Wrapper bereitgestellt API-Resourcen
 
+@CALLBACK@ ist die Funktion, mit der jeweils die Antwort verarbeitet werden soll.
 
 h3. Allgmeine Resourcen
 
-<pre><code>laut.fm.letters(callback)</code></pre>
+<pre><code>laut.fm.letters(CALLBACK)</code></pre>
 
 * "Demo":http://lautde.github.com/lautfm_js_tools/letters.html ("API URL":http://api.laut.fm/letters)
 
-<pre><code>laut.fm.genres(callback)</code></pre>
+<pre><code>laut.fm.genres(CALLBACK)</code></pre>
 
 * "Demo":http://lautde.github.com/lautfm_js_tools/genres.html ("API URL":http://api.laut.fm/genres)
 
-<pre><code>laut.fm.station_names(callback)</code></pre>
+<pre><code>laut.fm.station_names(CALLBACK)</code></pre>
 
 * "Demo":http://lautde.github.com/lautfm_js_tools/station_names.html ("API URL":http://api.laut.fm/station_names)
 
 
 h3. Stations-Auflistungen
 
+Alle Stations-Auflistungen funktionieren mit Optionen zur Paginierung:
+
 @OPTIONS@: @limit@ und/oder @offset@
 
-<pre><code>laut.fm.stations.all(callback[, OPTIONS])</code></pre>
+<pre><code>laut.fm.stations.all(CALLBACK[, OPTIONS])</code></pre>
 
-* "Demo":http://lautde.github.com/lautfm_js_tools/stations.all.html ("API URL":http://api.laut.fm/stations) (Achtung: Dauert etwas zu laden)
+* "Demo":http://lautde.github.com/lautfm_js_tools/stations.all.html ("API URL":http://api.laut.fm/stations) (Achtung: Dauert lange in Chrome, zu lange in Firefox)
 * "Demo mit limit":http://lautde.github.com/lautfm_js_tools/stations.all_limit10.html ("API URL":http://api.laut.fm/stations?limit=10)
 * "Demo mit limit und offset":http://lautde.github.com/lautfm_js_tools/stations.all_limit10_offset25.html ("API URL":http://api.laut.fm/stations?limit=10&offset=25)
 
-<pre><code>laut.fm.stations.letter(LETTER, callback[, OPTIONS])</code></pre>
+<pre><code>laut.fm.stations.letter(LETTER, CALLBACK[, OPTIONS])</code></pre>
 
 * "Demo":http://lautde.github.com/lautfm_js_tools/stations.letter_b.html ("API URL":http://api.laut.fm/stations/letter/b)
 * "Demo mit limit":http://lautde.github.com/lautfm_js_tools/stations.letter_b_limit10.html ("API URL":http://api.laut.fm/stations/letter/b?limit=10)
 * "Demo mit limit und offset":http://lautde.github.com/lautfm_js_tools/stations.letter_b_limit10_offset5.html ("API URL":http://api.laut.fm/stations/letter/b?limit=10&offset=5)
-* "Demo mit Zahl":http://lautde.github.com/lautfm_js_tools/stations.letter_#.html ("API URL":http://api.laut.fm/stations/numbers)
+* "Demo mit Zahl":http://lautde.github.com/lautfm_js_tools/stations.letter_hash.html ("API URL":http://api.laut.fm/stations/numbers)
 
-<pre><code>laut.fm.stations.numbers(callback[, OPTIONS])</code></pre>
+<pre><code>laut.fm.stations.numbers(CALLBACK[, OPTIONS])</code></pre>
 
 * "Demo":http://lautde.github.com/lautfm_js_tools/stations.numbers.html ("API URL":http://api.laut.fm/stations/numbers)
 
-<pre><code>laut.fm.stations.genre(GENRE, callback[, OPTIONS])</code></pre>
+<pre><code>laut.fm.stations.genre(GENRE, CALLBACK[, OPTIONS])</code></pre>
 
 @GENRE@ muss eins der Genres von @laut.fm.genres()@ sein.
 
-* "Demo":http://lautde.github.com/lautfm_js_tools/stations.genre_ROCK.html ("API URL":http://api.laut.fm/stations/genre/Rock) (Achtung: Dauert etwas zu laden)
+* "Demo":http://lautde.github.com/lautfm_js_tools/stations.genre_ROCK.html ("API URL":http://api.laut.fm/stations/genre/Rock) (Achtung: Dauert lange in Chrome, zu lange in Firefox)
 * "Demo mit limit":http://lautde.github.com/lautfm_js_tools/stations.genre_ROCK_limit10.html ("API URL":http://api.laut.fm/stations/genre/Rock?limit=10)
-* "Demo mit limit und offset":http://lautde.github.com/lautfm_js_tools/stations.genre_ROCK_limit10_offset5.html ("API URL":http://api.laut.fm/stations/genre/Rock?limit=10&offset=5)
-* "Demo mit Zahl":http://lautde.github.com/lautfm_js_tools/stations.letter_#.html ("API URL":http://api.laut.fm/stations/numbers) (Achtung: Dauert etwas zu laden)
+* "Demo mit limit und offset":http://lautde.github.com/lautfm_js_tools/stations.genre_ROCK_limit10_offset25.html ("API URL":http://api.laut.fm/stations/genre/Rock?limit=10&offset=25)
 
-<pre><code>laut.fm.stations.genre(NAMES, callback)</code></pre>
+<pre><code>laut.fm.stations.genre(NAMES, CALLBACK)</code></pre>
 
 @NAMES@ müssen Sendernamen sein, als String Komma-separiert oder als Array.
 
@@ -74,17 +76,10 @@ h3. Stations-Auflistungen
 
 h3. Einzel-Stations-Infos
 
-<pre><code>laut.fm.station('NAME').info(callback)</code></pre>
+<pre><code>laut.fm.station('NAME').info(CALLBACK)</code></pre>
 
 * "Demo":http://lautde.github.com/lautfm_js_tools/station.info.html ("API URL":http://api.laut.fm/station/eins)
 
-<pre><code>laut.fm.station('eins').current_song(callback)</code></pre>
+<pre><code>laut.fm.station('eins').current_song(CALLBACK)</code></pre>
 
 * "Demo":http://lautde.github.com/lautfm_js_tools/station.current_song.html ("API URL":http://api.laut.fm/station/eins/current_song)
-
-
-
-(notes to myself)
-
-* URL http://www.laut.fm/js/flowplayer-3.2.7.swf"
-* flowplayer update
