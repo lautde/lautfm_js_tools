@@ -23,6 +23,18 @@ h2. Über den Javascript-Wrapper bereitgestellt API-Resourcen
 
 h3. Allgmeine Resourcen
 
+* laut.fm.server_status(CALLBACK)
+
+<pre><code>laut.fm.time(CALLBACK)</code></pre>
+
+* "Demo":http://lautde.github.com/lautfm_js_tools/time.html ("API URL":http://api.laut.fm/time)
+
+(Der laut.fm API time Dienst dient im Wesentlichen dazu, den Zeitunterschied zwischen Client und Server zu bestimmen.)
+
+<pre><code>laut.fm.server_status(CALLBACK)</code></pre>
+
+* "Demo":http://lautde.github.com/lautfm_js_tools/server_status.html ("API URL":http://api.laut.fm/server_status)
+
 <pre><code>laut.fm.letters(CALLBACK)</code></pre>
 
 * "Demo":http://lautde.github.com/lautfm_js_tools/letters.html ("API URL":http://api.laut.fm/letters)
@@ -80,6 +92,52 @@ h3. Einzel-Stations-Infos
 
 * "Demo":http://lautde.github.com/lautfm_js_tools/station.info.html ("API URL":http://api.laut.fm/station/eins)
 
-<pre><code>laut.fm.station('eins').current_song(CALLBACK)</code></pre>
+<pre><code>laut.fm.station(NAME).current_song(CALLBACK)</code></pre>
 
 * "Demo":http://lautde.github.com/lautfm_js_tools/station.current_song.html ("API URL":http://api.laut.fm/station/eins/current_song)
+
+<pre><code>laut.fm.station(NAME).last_songs(CALLBACK)</code></pre>
+
+* "Demo":http://lautde.github.com/lautfm_js_tools/station.last_songs.html ("API URL":http://api.laut.fm/station/eins/last_songs)
+
+<pre><code>laut.fm.station(NAME).playlists(CALLBACK)</code></pre>
+
+* "Demo":http://lautde.github.com/lautfm_js_tools/station.playlists.html ("API URL":http://api.laut.fm/station/disco/playlists)
+
+<pre><code>laut.fm.station(NAME).schedule(CALLBACK)</code></pre>
+
+* "Demo":http://lautde.github.com/lautfm_js_tools/station.schedule.html ("API URL":http://api.laut.fm/station/disco/schedule)
+
+<pre><code>laut.fm.station(NAME).network(CALLBACK)</code></pre>
+
+* "Demo":http://lautde.github.com/lautfm_js_tools/station.network.html ("API URL":http://api.laut.fm/station/deepgroove/network)
+
+
+h3. Einzel-Stations-Infos mit Auto-Update
+
+Wird den Funktionen @info@, @current_song@ oder @last_songs@ als zweiter parameter ein @true@ übergeben, wird der API-Call und der zugehörige automatisch wiederholt:
+
+<pre><code>laut.fm.station(NAME).current_song(CALLBACK, true)</code></pre>
+
+* "Demo":http://lautde.github.com/lautfm_js_tools/station.current_song_auto.html ("API URL":http://api.laut.fm/station/eins/current_song)
+
+Wechselt man zum Beispiel die current_song-Anzeige zwischen mehreren Stationen, kann man das Autoupdate wieder canceln:
+
+<pre><code>var watchedStation = laut.fm.station(NAME1).current_song(CALLBACK, true);
+  // ...
+watchedStation.unwatch();
+var watchedStation = laut.fm.station(NAME2).current_song(CALLBACK, true);
+</code></pre>
+
+
+h3. Die API-Suche
+
+TODO: Doku
+
+* laut.fm.search.stations(QUERY)
+
+h3. Der Player
+
+TODO: Doku
+
+* laut.fm.player
