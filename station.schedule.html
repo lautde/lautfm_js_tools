@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>laut.fm JS tools demo</title>
+    <meta content='text/html;charset=utf-8' http-equiv='content-type'>
+    <script type="text/javascript" src="http://api.laut.fm/js_tools/lautfm_js_tools.0.2.0.js" ></script>
+  </head>
+  <body>
+    <div id="container"></div>
+    
+    <script type="text/javascript" charset="utf-8">
+      var container = document.getElementById('container');
+      
+      var show_schedule = function(schedule){
+        for (i in schedule){
+          var playlist = schedule[i];
+          
+          playlist_lis = '';
+          for (attr in playlist) {
+            playlist_lis = playlist_lis + '<li>' + attr + ': ' + playlist[attr] + '</li>';
+          }
+          
+          container.innerHTML = container.innerHTML + '<ul>' + playlist_lis + '</ul>';
+        }
+      };
+      
+      laut.fm.station('disco').schedule(show_schedule);
+    </script>
+    
+  </body>
+</html>

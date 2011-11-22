@@ -6,12 +6,22 @@
     <script type="text/javascript" src="http://api.laut.fm/js_tools/lautfm_js_tools.0.2.0.js" ></script>
   </head>
   <body>
+    <h1 id="head"></h1>
     <ul id="container"></ul>
     
     <script type="text/javascript" charset="utf-8">
       var container = document.getElementById('container');
+      var head = document.getElementById('head');
       
       var show_stations = function(stations){
+        head.innerHTML = 'No. ' +
+                          stations.offset +
+                          ' - ' +
+                          (stations.offset + stations.limit) +
+                          ' von ' +
+                          stations.total +
+                          ' Sendern'
+        
         for (i in stations.items) {
           var station = stations.items[i];
           container.innerHTML = container.innerHTML +

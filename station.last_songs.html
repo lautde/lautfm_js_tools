@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>laut.fm JS tools demo</title>
+    <meta content='text/html;charset=utf-8' http-equiv='content-type'>
+    <script type="text/javascript" src="http://api.laut.fm/js_tools/lautfm_js_tools.0.2.0.js" ></script>
+  </head>
+  <body>
+    <div id="container"></div>
+    
+    <script type="text/javascript" charset="utf-8">
+      var container = document.getElementById('container');
+      
+      var show_songs = function(songs){
+        for (i in songs){
+          var song = songs[i];
+          
+          song_lis = '';
+          for (attr in song) {
+            song_lis = song_lis + '<li>' + attr + ': ' + song[attr] + '</li>';
+          }
+          
+          container.innerHTML = container.innerHTML + '<ul>' + song_lis + '</ul>';
+        }
+      };
+      
+      laut.fm.station('eins').last_songs(show_songs);
+    </script>
+    
+  </body>
+</html>

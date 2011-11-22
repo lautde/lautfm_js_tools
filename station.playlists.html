@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>laut.fm JS tools demo</title>
+    <meta content='text/html;charset=utf-8' http-equiv='content-type'>
+    <script type="text/javascript" src="http://api.laut.fm/js_tools/lautfm_js_tools.0.2.0.js" ></script>
+  </head>
+  <body>
+    <ul id="container"></ul>
+    
+    <script type="text/javascript" charset="utf-8">
+      var container = document.getElementById('container');
+      
+      var show_playlists = function(playlists){
+        for (i in playlists) {
+          var playlist = playlists[i];
+          
+          playlist_lis = '';
+          for (attr in playlist) {
+            
+            var value = '';
+            if(attr == 'airtimes'){
+              for (i in playlist[attr]) {
+                var airtime = playlist[attr][i];
+                value = value + airtime.day + ' ' + airtime.hour + ', ';
+              }
+            } else {
+              value = playlist[attr];
+            }
+            playlist_lis = playlist_lis + '<li>' + attr + ': ' + value + '</li>';
+          }
+          
+          container.innerHTML = container.innerHTML + '<ul>' + playlist_lis + '</ul>';
+        }
+      };
+      
+      laut.fm.station('disco').playlists(show_playlists);
+    </script>
+    
+  </body>
+</html>
