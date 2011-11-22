@@ -21,9 +21,8 @@ h2. Über den Javascript-Wrapper bereitgestellt API-Resourcen
 
 @CALLBACK@ ist die Funktion, mit der jeweils die Antwort verarbeitet werden soll.
 
-h3. Allgmeine Resourcen
 
-* laut.fm.server_status(CALLBACK)
+h3. Allgmeine Resourcen
 
 <pre><code>laut.fm.time(CALLBACK)</code></pre>
 
@@ -119,7 +118,7 @@ Wird den Funktionen @info@, @current_song@ oder @last_songs@ als zweiter paramet
 
 <pre><code>laut.fm.station(NAME).current_song(CALLBACK, true)</code></pre>
 
-* "Demo":http://lautde.github.com/lautfm_js_tools/station.current_song_auto.html ("API URL":http://api.laut.fm/station/eins/current_song)
+* "Demo":http://lautde.github.com/lautfm_js_tools/station.current_song_auto.html ("API URL":http://api.laut.fm/station/maxeinsdreissig/current_song)
 
 Wechselt man zum Beispiel die current_song-Anzeige zwischen mehreren Stationen, kann man das Autoupdate wieder canceln:
 
