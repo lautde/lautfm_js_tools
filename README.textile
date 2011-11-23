@@ -34,7 +34,7 @@ h2. Über den Javascript-Wrapper bereitgestellt API-Resourcen
 Experimentell kann @CALLBACK@ auch ein Options-Hash sein:
 
 <pre><code>{container:CONTAINER, template:TEMPLATE, callback:CALLBACK}
-<pre><code>
+</code></pre>
 
 @CONTAINER@ und @TEMPLATE@ können Dom-Elemente oder HTML IDs sein. Ein @CALLBACK@ ist dann optional.
 
