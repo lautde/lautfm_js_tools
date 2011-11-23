@@ -51,6 +51,15 @@ Eine komplette Einbindung des gerade laufenden Songs per Template inklusive Auto
 </script>
 </code></pre>
 
+Im Template gibt es zwei Tags: @<%= ... %>@ (für Ausgabe) und @<% ... %>@ für stille Auswertung. Ein Template für die letzen gespielten Songs sieht also z.B. so aus:
+
+<pre><code><script type="text/html" id="songs_template" charset="utf-8">
+  <% this.forEach(function(song){ %>
+    <li><%= song.started_at.humanTimeLong() %> <%= song.title %> - <%= song.artist.name %></li>
+  <% }); %>
+</script>
+</code></pre>
+
 h3. Allgmeine Resourcen
 
 <pre><code>laut.fm.time(CALLBACK_OR_OPTIONS)</code></pre>
