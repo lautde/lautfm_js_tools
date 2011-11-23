@@ -12,17 +12,18 @@
       var container = document.getElementById('container');
       
       var show_network = function(network){
-        for (i in network){
-          var recommendation = network[i];
-          
-          network_lis = '';
+        var buffer = [];
+        
+        network.forEach(function(recommendation){
+          buffer.push('<ul>');
           for (attr in recommendation.station) {
-            network_lis = network_lis + '<li>' + attr + ': ' + recommendation.station[attr] + '</li>';
+            buffer.push('<li>', attr, ': ', recommendation.station[attr], '</li>');
           }
-          network_lis = network_lis + '<li>comment: ' + recommendation.comment + '</li>';
-          
-          container.innerHTML = container.innerHTML + '<ul>' + network_lis + '</ul>';
-        }
+          buffer.push('<li>comment: ', recommendation.comment, '</li>');
+          buffer.push('</ul>');
+        })
+        
+        container.innerHTML = buffer.join('');
       };
       
       laut.fm.station('deepgroove').network(show_network);

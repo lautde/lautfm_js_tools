@@ -14,23 +14,15 @@
       var head = document.getElementById('head');
       
       var show_stations = function(stations){
-        head.innerHTML = 'No. ' +
-                          stations.offset +
-                          ' - ' +
-                          (stations.offset + stations.limit) +
-                          ' von ' +
-                          stations.total +
-                          ' Sendern'
+        var buffer = [];
         
-        for (i in stations.items) {
-          var station = stations.items[i];
-          container.innerHTML = container.innerHTML +
-                                '<li>' +
-                                  station.name +
-                                  ' (' +
-                                  station.format +
-                                ')</li>';
-        }
+        head.innerHTML = ['No. ', stations.offset, ' - ', (stations.offset + stations.limit), ' von ', stations.total, ' Sendern'].join('');
+        
+        stations.items.forEach(function(station){
+          buffer.push('<li>', station.name, ' (', station.format, ')</li>');
+        });
+        
+        container.innerHTML = buffer.join('');
       };
       
       laut.fm.stations.genre('Rock', show_stations, {limit:10, offset:25});

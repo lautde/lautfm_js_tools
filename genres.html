@@ -12,10 +12,13 @@
       var container = document.getElementById('container');
       
       var show_genres = function(genres){
-        for (i in genres) {
-          var genre = genres[i];
-          container.innerHTML = container.innerHTML + genre.name + ', ';
-        }
+        var buffer = [];
+        
+        genres.forEach(function(genre){
+          buffer.push(genre.name);
+        })
+        
+        container.innerHTML = buffer.join(', ')
       }
       
       laut.fm.genres(show_genres);

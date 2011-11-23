@@ -12,16 +12,17 @@
       var container = document.getElementById('container');
       
       var show_schedule = function(schedule){
-        for (i in schedule){
-          var playlist = schedule[i];
-          
-          playlist_lis = '';
+        var buffer = [];
+        
+        schedule.forEach(function(playlist){
+          buffer.push('<ul>');
           for (attr in playlist) {
-            playlist_lis = playlist_lis + '<li>' + attr + ': ' + playlist[attr] + '</li>';
+            buffer.push('<li>', attr, ': ', playlist[attr], '</li>');
           }
+          buffer.push('</ul>');
+        })
           
-          container.innerHTML = container.innerHTML + '<ul>' + playlist_lis + '</ul>';
-        }
+        container.innerHTML = buffer.join('');
       };
       
       laut.fm.station('disco').schedule(show_schedule);

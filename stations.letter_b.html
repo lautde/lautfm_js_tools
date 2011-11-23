@@ -12,15 +12,13 @@
       var container = document.getElementById('container');
       
       var show_stations = function(stations){
-        for (i in stations) {
-          var station = stations[i];
-          container.innerHTML = container.innerHTML +
-                                '<li>' +
-                                  station.name +
-                                  ' (' +
-                                  station.format +
-                                ')</li>';
-        }
+        var buffer = [];
+        
+        stations.forEach(function(station){
+          buffer.push('<li>', station.name, ' (', station.format, ')</li>');
+        });
+        
+        container.innerHTML = buffer.join('');
       };
       
       laut.fm.stations.letter('b', show_stations);

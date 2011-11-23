@@ -12,26 +12,26 @@
       var container = document.getElementById('container');
       
       var show_playlists = function(playlists){
-        for (i in playlists) {
-          var playlist = playlists[i];
-          
-          playlist_lis = '';
+        var buffer = [];
+        
+        playlists.forEach(function(playlist){
+          buffer.push('<ul>');
           for (attr in playlist) {
             
-            var value = '';
+            var value = [];
             if(attr == 'airtimes'){
-              for (i in playlist[attr]) {
-                var airtime = playlist[attr][i];
-                value = value + airtime.day + ' ' + airtime.hour + ', ';
-              }
+              playlist.airtimes.forEach(function(airtime){
+                value.push(airtime.day, ' ', airtime.hour, ', ');
+              })
             } else {
-              value = playlist[attr];
+              value.push(playlist[attr]);
             }
-            playlist_lis = playlist_lis + '<li>' + attr + ': ' + value + '</li>';
+            buffer.push('<li>', attr, ': ', value.join(''), '</li>');
           }
-          
-          container.innerHTML = container.innerHTML + '<ul>' + playlist_lis + '</ul>';
-        }
+          buffer.push('</ul>');
+        })
+        
+        container.innerHTML = buffer.join('');
       };
       
       laut.fm.station('disco').playlists(show_playlists);
