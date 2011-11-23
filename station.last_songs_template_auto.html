@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>laut.fm JS tools demo</title>
+    <meta content='text/html;charset=utf-8' http-equiv='content-type'>
+    <!-- script type="text/javascript" src="http://api.laut.fm/js_tools/lautfm_js_tools.0.2.0.js" ></script -->
+    <script type="text/javascript" src="http://localhost:9292/lautfm_js_tools.js" ></script>
+  </head>
+  <body>
+    <ul id="songs"></ul>
+    
+    <script type="text/html" id="songs_template" charset="utf-8">
+      <% this.forEach(function(song){ %>
+        <li><%= song.started_at.humanTimeLong() %> <%= song.title %> - <%= song.artist.name %></li>
+      <% }); %>
+    </script>
+    
+    <script type="text/javascript" charset="utf-8">
+      laut.fm.station('maxeinsdreissig').last_songs({container:'songs', template:'songs_template'}, true);
+    </script>
+  </body>
+</html>
