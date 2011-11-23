@@ -31,12 +31,25 @@ h2. Über den Javascript-Wrapper bereitgestellt API-Resourcen
 
 @CALLBACK_OR_OPTIONS@ ist die Funktion, mit der jeweils die Antwort verarbeitet werden soll.
 
-Experimentell kann @CALLBACK_OR_OPTIONS@ auch ein Options-Hash sein:
+Ab Version 0.3.0: Experimentell kann @CALLBACK_OR_OPTIONS@ auch ein Options-Hash sein:
 
 <pre><code>{container:CONTAINER, template:TEMPLATE, callback:CALLBACK}
 </code></pre>
 
 @CONTAINER@ und @TEMPLATE@ können Dom-Elemente oder HTML IDs sein. Ein @CALLBACK@ ist dann optional.
+
+Eine komplette Einbindung des gerade laufenden Songs per Template inklusive Autoupdate sieht dann z.B. so aus:
+
+<pre><code><div id="song"></div>
+
+<script type="text/html" id="song_template" charset="utf-8">
+  <%= this.title %> - <%= this.artist.name %> (<%= this.started_at.humanTimeLong() %> - <%= this.ends_at.humanTimeLong() %>)
+</script>
+
+<script type="text/javascript" charset="utf-8">
+  laut.fm.station('maxeinsdreissig').current_song({container:'song', template:'song_template'}, true);
+</script>
+</code></pre>
 
 h3. Allgmeine Resourcen
 
@@ -71,7 +84,7 @@ Alle Stations-Auflistungen funktionieren mit Optionen zur Paginierung:
 
 <pre><code>laut.fm.stations.all(CALLBACK_OR_OPTIONS[, OPTIONS])</code></pre>
 
-* "Demo":http://lautde.github.com/lautfm_js_tools/stations.all.html ("API URL":http://api.laut.fm/stations) (Achtung: Dauert lange in Chrome, zu lange in Firefox)
+* "Demo":http://lautde.github.com/lautfm_js_tools/stations.all.html ("API URL":http://api.laut.fm/stations)
 * "Demo mit limit":http://lautde.github.com/lautfm_js_tools/stations.all_limit10.html ("API URL":http://api.laut.fm/stations?limit=10)
 * "Demo mit limit und offset":http://lautde.github.com/lautfm_js_tools/stations.all_limit10_offset25.html ("API URL":http://api.laut.fm/stations?limit=10&offset=25)
 
@@ -90,7 +103,7 @@ Alle Stations-Auflistungen funktionieren mit Optionen zur Paginierung:
 
 @GENRE@ muss eins der Genres von @laut.fm.genres()@ sein.
 
-* "Demo":http://lautde.github.com/lautfm_js_tools/stations.genre_ROCK.html ("API URL":http://api.laut.fm/stations/genre/Rock) (Achtung: Dauert lange in Chrome, zu lange in Firefox)
+* "Demo":http://lautde.github.com/lautfm_js_tools/stations.genre_ROCK.html ("API URL":http://api.laut.fm/stations/genre/Rock)
 * "Demo mit limit":http://lautde.github.com/lautfm_js_tools/stations.genre_ROCK_limit10.html ("API URL":http://api.laut.fm/stations/genre/Rock?limit=10)
 * "Demo mit limit und offset":http://lautde.github.com/lautfm_js_tools/stations.genre_ROCK_limit10_offset25.html ("API URL":http://api.laut.fm/stations/genre/Rock?limit=10&offset=25)
 
@@ -110,12 +123,12 @@ h3. Einzel-Stations-Infos
 <pre><code>laut.fm.station(NAME).current_song(CALLBACK_OR_OPTIONS)</code></pre>
 
 * "Demo":http://lautde.github.com/lautfm_js_tools/station.current_song.html ("API URL":http://api.laut.fm/station/eins/current_song)
-* "Experimental Template Support":http://lautde.github.com/lautfm_js_tools/station.current_song_template.html
+* "Demo Experimental Template Support":http://lautde.github.com/lautfm_js_tools/station.current_song_template.html
 
 <pre><code>laut.fm.station(NAME).last_songs(CALLBACK_OR_OPTIONS)</code></pre>
 
 * "Demo":http://lautde.github.com/lautfm_js_tools/station.last_songs.html ("API URL":http://api.laut.fm/station/eins/last_songs)
-* "Experimental Template Support":http://lautde.github.com/lautfm_js_tools/station.last_songs_template.html
+* "Demo Experimental Template Support":http://lautde.github.com/lautfm_js_tools/station.last_songs_template.html
 
 <pre><code>laut.fm.station(NAME).playlists(CALLBACK_OR_OPTIONS)</code></pre>
 
