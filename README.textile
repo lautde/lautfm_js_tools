@@ -132,12 +132,12 @@ h3. Einzel-Stations-Infos
 <pre><code>laut.fm.station(NAME).current_song(CALLBACK_OR_OPTIONS)</code></pre>
 
 * "Demo":http://lautde.github.com/lautfm_js_tools/station.current_song.html ("API URL":http://api.laut.fm/station/eins/current_song)
-* "Demo Experimental Template Support":http://lautde.github.com/lautfm_js_tools/station.current_song_template.html
+* "Demo Experimental Template Support":http://lautde.github.com/lautfm_js_tools/station.current_song_template_auto.html
 
 <pre><code>laut.fm.station(NAME).last_songs(CALLBACK_OR_OPTIONS)</code></pre>
 
 * "Demo":http://lautde.github.com/lautfm_js_tools/station.last_songs.html ("API URL":http://api.laut.fm/station/eins/last_songs)
-* "Demo Experimental Template Support":http://lautde.github.com/lautfm_js_tools/station.last_songs_template.html
+* "Demo Experimental Template Support":http://lautde.github.com/lautfm_js_tools/station.last_songs_template_auto.html
 
 <pre><code>laut.fm.station(NAME).playlists(CALLBACK_OR_OPTIONS)</code></pre>
 
