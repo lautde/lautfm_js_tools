@@ -116,7 +116,7 @@ Alle Stations-Auflistungen funktionieren mit Optionen zur Paginierung:
 * "Demo mit limit":http://lautde.github.com/lautfm_js_tools/stations.genre_ROCK_limit10.html ("API URL":http://api.laut.fm/stations/genre/Rock?limit=10)
 * "Demo mit limit und offset":http://lautde.github.com/lautfm_js_tools/stations.genre_ROCK_limit10_offset25.html ("API URL":http://api.laut.fm/stations/genre/Rock?limit=10&offset=25)
 
-<pre><code>laut.fm.stations.genre(NAMES, CALLBACK_OR_OPTIONS)</code></pre>
+<pre><code>laut.fm.stations.names(NAMES, CALLBACK_OR_OPTIONS)</code></pre>
 
 @NAMES@ müssen Sendernamen sein, als String Komma-separiert oder als Array.
 
