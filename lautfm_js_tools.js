@@ -184,9 +184,9 @@ if (!Array.prototype.forEach) {
           if(callback_or_opts.callback){ callback_or_opts.callback(api_result) ; };
           if(template && container){
             if(typeof container == 'string'){ container = document.getElementById(container) ; }
-            if(typeof template == 'string'){ template = document.getElementById(template) ; }
+            if(typeof template == 'string' && document.getElementById(template) != null){ template = document.getElementById(template).innerHTML }
           };
-          container.innerHTML = parseTemplate(template.innerHTML, api_result);
+          container.innerHTML = parseTemplate(template, api_result);
         };
       }
       

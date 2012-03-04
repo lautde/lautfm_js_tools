@@ -36,7 +36,7 @@ Ab Version 0.3.0: Experimentell kann @CALLBACK_OR_OPTIONS@ auch ein Options-Hash
 <pre><code>{container:CONTAINER, template:TEMPLATE, callback:CALLBACK}
 </code></pre>
 
-@CONTAINER@ und @TEMPLATE@ können Dom-Elemente oder HTML IDs sein. Ein @CALLBACK@ ist dann optional.
+@CONTAINER@ und @TEMPLATE@ können Dom-Elemente oder HTML IDs sein. @TEMPLATE@ kann auch ein String als Template sein. Ein @CALLBACK@ ist dann optional.
 
 Eine komplette Einbindung des gerade laufenden Songs per Template inklusive Autoupdate sieht dann z.B. so aus:
 
