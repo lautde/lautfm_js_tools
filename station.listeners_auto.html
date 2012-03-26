@@ -6,22 +6,14 @@
     <script type="text/javascript" src="http://api.laut.fm/js_tools/lautfm_js_tools.0.7.0.js" ></script>
   </head>
   <body>
-    <ul id="container"></ul>
+    <h1 id="container"></h1>
     
     <script type="text/javascript" charset="utf-8">
       var container = document.getElementById('container');
       
-      var show_stations = function(stations){
-        var buffer = [];
-        
-        stations.forEach(function(station){
-          buffer.push('<li>', station.name, ' (', station.format, ')</li>');
-        });
-        
-        container.innerHTML = buffer.join('');
-      };
+      var show_listeners = function(listeners){ container.innerHTML = listeners }
       
-      laut.fm.stations.letter('b', show_stations, {limit:10});
+      laut.fm.station('best_of_80s').listeners(show_listeners, true);
     </script>
     
   </body>
