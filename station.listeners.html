@@ -6,16 +6,14 @@
     <script type="text/javascript" src="http://api.laut.fm/js_tools/lautfm_js_tools.0.6.0.js" ></script>
   </head>
   <body>
-    <div id="container"></div>
+    <h1 id="container"></h1>
     
     <script type="text/javascript" charset="utf-8">
       var container = document.getElementById('container');
       
-      var show_server_status = function(server_status){
-        container.innerHTML = server_status.message;
-      }
+      var show_listeners = function(listeners){ container.innerHTML = listeners }
       
-      laut.fm.server_status(show_server_status);
+      laut.fm.station('best_of_80s').listeners(show_listeners);
     </script>
     
   </body>

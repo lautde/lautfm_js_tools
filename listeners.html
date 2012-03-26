@@ -9,13 +9,15 @@
     <div id="container"></div>
     
     <script type="text/javascript" charset="utf-8">
-      var container = document.getElementById('container');
       
-      var show_server_status = function(server_status){
-        container.innerHTML = server_status.message;
-      }
+      var listener_text = '';
+      laut.fm.listeners(function(listeners){
+        for (station in listeners) {
+          listener_text = listener_text + station + ': ' + listeners[station] + '<br>';
+        }
+        document.getElementById('container').innerHTML = listener_text;
+      });
       
-      laut.fm.server_status(show_server_status);
     </script>
     
   </body>
