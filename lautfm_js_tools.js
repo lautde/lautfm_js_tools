@@ -259,7 +259,7 @@ if (!Array.prototype.forEach) {
     var getLetters      = function(callback){ apiget('letters'       , callback, false, this); return this; };
     var getGenres       = function(callback){ apiget('genres'        , callback, false, this); return this; };
     var getStationNames = function(callback){ apiget('station_names' , callback, false, this); return this; };
-    var getListeners    = function(callback){ apiget('listeners'     , callback, false, this); return this; };
+    var getAllListeners = function(callback){ apiget('listeners'     , callback, false, this); return this; };
     
     // The single station API calls:
     var getInfo         = function(callback, watch){ apiget('station/' + this.station                  , callback, watch, this); return this; };
@@ -432,7 +432,7 @@ if (!Array.prototype.forEach) {
       letters       : getLetters,
       genres        : getGenres,
       station_names : getStationNames,
-      listeners     : getListeners,
+      listeners     : getAllListeners,
       stations      : {
         all     : getAll,
         letter  : getLetter,
