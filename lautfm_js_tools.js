@@ -134,9 +134,18 @@ if (!Array.prototype.forEach) {
       }
     };
     
+    var next_full_hour = function(){
+      d = new Date;
+      d.setHours( d.getHours() + 1 );
+      d.setMinutes(0);
+      d.setSeconds(0);
+      return d;
+    };
+    
     var expiration_by_content = function(result){
       return (typeof result.ends_at != 'undefined' && result.ends_at) ||
-                    (typeof result[0] !='undefined' && result[0].ends_at !='undefined' && result[0].ends_at);
+                    (typeof result[0] !='undefined' && result[0].ends_at !='undefined' && result[0].ends_at) ||
+                    next_full_hour();
     };
     
     // Idea: http://ejohn.org/blog/javascript-micro-templating/
@@ -207,13 +216,12 @@ if (!Array.prototype.forEach) {
           // json content. for now, we only handle .current_song and .last_songs:
           if(typeof(watch)!='undefined' && watch){
             var expires = expiration_by_content(result);
-            
             if(expires){
               // The absolute difference between now and the expiration, at least 5 seconds.
               with_lautfm_time_offset(function(offset){
                 var expires_in = Math.max(5000, expires - new Date + offset);
                 var to = setTimeout(function(){ apiget(url, callback, true, self); }, expires_in);
-                self.timers.push(to);
+                if(self.timers){ self.timers.push(to) };
               });
             }
           }
@@ -236,7 +244,7 @@ if (!Array.prototype.forEach) {
                   with_lautfm_time_offset(function(offset){
                     var expires_in = Math.max(5000, Date.parse(xhr.getResponseHeader('Expires')) - new Date + offset);
                     var to = setTimeout(function(){ apiget(url, callback, true, self); }, expires_in);
-                    self.timers.push(to);
+                    if(self.timers){ self.timers.push(to) };
                   });
                 }
                 
@@ -254,21 +262,21 @@ if (!Array.prototype.forEach) {
     };
     
     // The general API calls:
-    var getTime         = function(callback){ apiget('time'          , callback, false, this); return this; };
-    var getStatus       = function(callback){ apiget('server_status' , callback, false, this); return this; };
-    var getLetters      = function(callback){ apiget('letters'       , callback, false, this); return this; };
-    var getGenres       = function(callback){ apiget('genres'        , callback, false, this); return this; };
-    var getStationNames = function(callback){ apiget('station_names' , callback, false, this); return this; };
-    var getAllListeners = function(callback){ apiget('listeners'     , callback, false, this); return this; };
+    var getTime         = function(callback       ){ apiget('time'          , callback, false, this); return this; };
+    var getStatus       = function(callback       ){ apiget('server_status' , callback, false, this); return this; };
+    var getLetters      = function(callback, watch){ apiget('letters'       , callback, watch, this); return this; };
+    var getGenres       = function(callback, watch){ apiget('genres'        , callback, watch, this); return this; };
+    var getStationNames = function(callback, watch){ apiget('station_names' , callback, watch, this); return this; };
+    var getAllListeners = function(callback, watch){ apiget('listeners'     , callback, watch, this); return this; };
     
     // The single station API calls:
     var getInfo         = function(callback, watch){ apiget('station/' + this.station                  , callback, watch, this); return this; };
     var getCurrentSong  = function(callback, watch){ apiget('station/' + this.station + '/current_song', callback, watch, this); return this; };
     var getLastSongs    = function(callback, watch){ apiget('station/' + this.station + '/last_songs'  , callback, watch, this); return this; };
-    var getPlaylists    = function(callback       ){ apiget('station/' + this.station + '/playlists'   , callback, false, this); return this; };
-    var getSchedule     = function(callback       ){ apiget('station/' + this.station + '/schedule'    , callback, false, this); return this; };
-    var getNetwork      = function(callback       ){ apiget('station/' + this.station + '/network'     , callback, false, this); return this; };
-    var getListeners    = function(callback       ){ apiget('station/' + this.station + '/listeners'   , callback, false, this); return this; };
+    var getPlaylists    = function(callback, watch){ apiget('station/' + this.station + '/playlists'   , callback, watch, this); return this; };
+    var getSchedule     = function(callback, watch){ apiget('station/' + this.station + '/schedule'    , callback, watch, this); return this; };
+    var getNetwork      = function(callback, watch){ apiget('station/' + this.station + '/network'     , callback, watch, this); return this; };
+    var getListeners    = function(callback, watch){ apiget('station/' + this.station + '/listeners'   , callback, watch, this); return this; };
     
     var unwatchTimers   = function(){
       for(var i in this.timers) {
