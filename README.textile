@@ -84,6 +84,10 @@ h3. Allgmeine Resourcen
 
 * "Demo":http://lautde.github.com/lautfm_js_tools/station_names.html ("API URL":http://api.laut.fm/station_names)
 
+<pre><code>laut.fm.listeners(CALLBACK_OR_OPTIONS)</code></pre>
+
+* "Demo":http://lautde.github.com/lautfm_js_tools/listeners.html ("API URL":http://api.laut.fm/listeners)
+
 
 h3. Stations-Auflistungen
 
@@ -150,6 +154,10 @@ h3. Einzel-Stations-Infos
 <pre><code>laut.fm.station(NAME).network(CALLBACK_OR_OPTIONS)</code></pre>
 
 * "Demo":http://lautde.github.com/lautfm_js_tools/station.network.html ("API URL":http://api.laut.fm/station/deepgroove/network)
+
+<pre><code>laut.fm.station(NAME).listeners(CALLBACK_OR_OPTIONS)</code></pre>
+
+* "Demo":http://lautde.github.com/lautfm_js_tools/station.listeners.html ("API URL":http://api.laut.fm/station/best_of_80s/listeners)
 
 
 h3. Einzel-Stations-Infos mit Auto-Update

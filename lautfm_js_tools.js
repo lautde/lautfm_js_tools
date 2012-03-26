@@ -259,6 +259,7 @@ if (!Array.prototype.forEach) {
     var getLetters      = function(callback){ apiget('letters'       , callback, false, this); return this; };
     var getGenres       = function(callback){ apiget('genres'        , callback, false, this); return this; };
     var getStationNames = function(callback){ apiget('station_names' , callback, false, this); return this; };
+    var getListeners    = function(callback){ apiget('listeners'     , callback, false, this); return this; };
     
     // The single station API calls:
     var getInfo         = function(callback, watch){ apiget('station/' + this.station                  , callback, watch, this); return this; };
@@ -267,6 +268,7 @@ if (!Array.prototype.forEach) {
     var getPlaylists    = function(callback       ){ apiget('station/' + this.station + '/playlists'   , callback, false, this); return this; };
     var getSchedule     = function(callback       ){ apiget('station/' + this.station + '/schedule'    , callback, false, this); return this; };
     var getNetwork      = function(callback       ){ apiget('station/' + this.station + '/network'     , callback, false, this); return this; };
+    var getListeners    = function(callback       ){ apiget('station/' + this.station + '/listeners'   , callback, false, this); return this; };
     
     var unwatchTimers   = function(){
       for(var i in this.timers) {
@@ -430,6 +432,7 @@ if (!Array.prototype.forEach) {
       letters       : getLetters,
       genres        : getGenres,
       station_names : getStationNames,
+      listeners     : getListeners,
       stations      : {
         all     : getAll,
         letter  : getLetter,
@@ -447,6 +450,7 @@ if (!Array.prototype.forEach) {
           playlists     : getPlaylists,
           schedule      : getSchedule,
           network       : getNetwork,
+          listeners     : getListeners,
           unwatch       : unwatchTimers,
           timers        : []
         };
