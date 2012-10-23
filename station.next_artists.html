@@ -11,17 +11,17 @@
     <script>
       var container = document.getElementById('container');
       
-      var show_stations = function(stations){
+      var show_next_artists = function(artists){
         var buffer = [];
         
-        stations.forEach(function(station){
-          buffer.push('<li>', station.name, ' (', station.format, ')</li>');
+        artists.forEach(function(artist){
+          buffer.push('<li>', artist.artist.name, '</li>');
         });
         
         container.innerHTML = buffer.join('');
       };
       
-      laut.fm.stations.numbers(show_stations);
+      laut.fm.station('eins').next_artists(show_next_artists, true);
     </script>
     
   </body>
