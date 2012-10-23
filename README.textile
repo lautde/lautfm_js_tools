@@ -139,7 +139,7 @@ h3. Einzel-Stations-Infos
 
 <pre><code>laut.fm.station(NAME).next_artists(CALLBACK_OR_OPTIONS)</code></pre>
 
-* "Demo":http://lautde.github.com/lautfm_js_tools/station.next_artists.html ("API URL":http://api.laut.fm/station/eins/last_songs)
+* "Demo":http://lautde.github.com/lautfm_js_tools/station.next_artists.html ("API URL":http://api.laut.fm/station/eins/next_artists)
 * "Demo mit Autoupdate":http://lautde.github.com/lautfm_js_tools/station.next_artists_auto.html
 
 <pre><code>laut.fm.station(NAME).playlists(CALLBACK_OR_OPTIONS)</code></pre>
