@@ -490,6 +490,7 @@ if (!Array.indexOf) {
           stop: function(){
             var this_player = get_player();
             this_player.stop();
+            this_player.close();
             onStateChange('stop', this_player.getClip(0)['title']);
           },
           
