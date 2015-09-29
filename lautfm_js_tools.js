@@ -444,7 +444,7 @@ if (!Array.indexOf) {
               return false;
             
             var player_id = 'the_lautfm_player';
-            var stream_url = 'http://stream.laut.fm/'+station+'?type=.flv';
+            var stream_url = '//stream.laut.fm/'+station+'?type=.flv';
             onStateChange('buffering', station);
             
             var player = get_player();
@@ -456,7 +456,7 @@ if (!Array.indexOf) {
             document.body.appendChild(container);
             
             var player = $f(container, {
-              src: "http://api.laut.fm/js_tools/flowplayer-3.2.15.swf",
+              src: "//api.laut.fm/js_tools/flowplayer-3.2.15.swf",
               onFail: function(){ the_fallback_player(player_self.onStateChange).play(station); }
             }, {
               clip: {
@@ -477,7 +477,7 @@ if (!Array.indexOf) {
             var this_player = get_player();
             
             if(this_player && this_player.getState()==3){
-              return this_player.getClip().url.replace('http://stream.laut.fm/','').replace('?type=.flv','');;
+              return this_player.getClip().url.replace('//stream.laut.fm/','').replace('?type=.flv','');;
             }else{
               return false;
             }
@@ -532,7 +532,7 @@ if (!Array.indexOf) {
             // if(this.isPlaying() && this.isPlaying()!=station)
             //   laut.fm.station(this.isPlaying()).unwatch();
             
-            this_player.setAttribute('src', 'http://stream.laut.fm/'+station);
+            this_player.setAttribute('src', '//stream.laut.fm/'+station);
             this_player.play();
             
             onStateChange('buffering', station);
@@ -545,7 +545,7 @@ if (!Array.indexOf) {
           isPlaying: function(){
             if(this_player.buffered.length==0) return false;
             if(this_player.getAttribute('src')==null) return false;
-            return this_player.getAttribute('src').replace('http://stream.laut.fm/','');
+            return this_player.getAttribute('src').replace('//stream.laut.fm/','');
           },
           progress: function(){
             if(this_player.buffered.length==0) return false;
@@ -620,7 +620,7 @@ if (!Array.indexOf) {
     // The actual laut.fm object:
     window.laut.fm = {
       errorcallback : function(msg){},
-      apiServer     : 'http://api.laut.fm',
+      apiServer     : '//api.laut.fm',
       time          : getTime,
       server_status : getStatus,
       letters       : getLetters,
