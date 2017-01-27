@@ -22,11 +22,6 @@ h2. Convinience
 * Der Array-Prototyp wird mit @forEach()@ erweitert. (siehe "tutorialspoint.com":http://www.tutorialspoint.com/javascript/array_foreach.htm).
 * Zeiten haben @humanTimeShort()@ und @humanTimeLong()@ für Uhrzeiten ala "12:34" und "12:34:56".
 
-h2. Einschränkungen
-
-* CORS-Requests werden unterstützt durch alle modernen Browser außer Opera. Soweit abzusehen bekommt Opera "CORS-Support ab Version 12":http://my.opera.com/core/blog/2011/10/28/cors-goes-mainline.
-
-
 h2. Über den Javascript-Wrapper bereitgestellt API-Resourcen
 
 @CALLBACK_OR_OPTIONS@ ist die Funktion, mit der jeweils die Antwort verarbeitet werden soll.
