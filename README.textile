@@ -188,6 +188,7 @@ TODO: Doku
 
 h2. Release History
 
+* 2017-01-27 0.9.1 https support all over.
 * 2012-10-23 0.8.0 next_arists support. in production on the official laut.fm website.
 * 2012-03-26 0.7.0 added auto updates
 * 2012-03-26 0.6.0 all listeners bug fix
