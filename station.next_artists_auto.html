@@ -6,26 +6,22 @@
     <script type="text/javascript" src="//api.laut.fm/js_tools/lautfm_js_tools.0.9.1.js" ></script>
   </head>
   <body>
-    <h1 id="head"></h1>
     <ul id="container"></ul>
     
     <script>
       var container = document.getElementById('container');
-      var head = document.getElementById('head');
       
-      var show_stations = function(stations){
+      var show_next_artists = function(artists){
         var buffer = [];
         
-        head.innerHTML = ['No. ', stations.offset, ' - ', (stations.offset + stations.limit), ' von ', stations.total, ' Sendern'].join('');
-        
-        stations.items.forEach(function(station){
-          buffer.push('<li>', station.name, ' (', station.format, ')</li>');
+        artists.forEach(function(artist){
+          buffer.push('<li>', artist.artist.name, '</li>');
         });
         
         container.innerHTML = buffer.join('');
       };
       
-      laut.fm.stations.all(show_stations, {limit:10, offset:25});
+      laut.fm.station('eins').next_artists(show_next_artists);
     </script>
     
   </body>

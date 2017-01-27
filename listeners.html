@@ -9,19 +9,15 @@
     <div id="container"></div>
     
     <script>
-      var container = document.getElementById('container');
       
-      var show_genres = function(genres){
-        var buffer = [];
-        
-        genres.forEach(function(genre){
-          buffer.push(genre.name);
-        })
-        
-        container.innerHTML = buffer.join(', ')
-      }
+      var listener_text = '';
+      laut.fm.listeners(function(listeners){
+        for (station in listeners) {
+          listener_text = listener_text + station + ': ' + listeners[station] + '<br>';
+        }
+        document.getElementById('container').innerHTML = listener_text;
+      });
       
-      laut.fm.genres(show_genres);
     </script>
     
   </body>

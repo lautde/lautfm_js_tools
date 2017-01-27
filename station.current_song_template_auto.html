@@ -3,7 +3,7 @@
   <head>
     <title>laut.fm JS tools demo</title>
     <meta content='text/html;charset=utf-8' http-equiv='content-type'>
-    <script type="text/javascript" src="http://api.laut.fm/js_tools/lautfm_js_tools.0.9.1.js" ></script>
+    <script type="text/javascript" src="//api.laut.fm/js_tools/lautfm_js_tools.0.9.1.js" ></script>
   </head>
   <body>
     <div id="song"></div>
@@ -12,7 +12,7 @@
       <%= this.title %> - <%= this.artist.name %> (<%= this.started_at.humanTimeLong() %> - <%= this.ends_at.humanTimeLong() %>)
     </script>
     
-    <script type="text/javascript" charset="utf-8">
+    <script>
       laut.fm.station('maxeinsdreissig').current_song({container:'song', template:'song_template'}, true);
     </script>
   </body>
