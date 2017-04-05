@@ -15,7 +15,7 @@ h2. Features
 * Keine weiteren Abhängigkeiten
 
 
-h2. Convinience
+h2. Convenience
 
 * "Crockfords JSON2.js Bibliothek":https://github.com/douglascrockford/JSON-js/raw/master/json2.js ist enthalten. Sie stellt im Wesentlich @JSON.stringify()@ und @JSON.parse()@ zur Verfügung.
 * Die "Flowplayer Javascript Bibliothek":http://static.flowplayer.org/js/flowplayer-3.2.6.min.js ist enthalten. Sie beinhaltet Javascript-Bridge für den Flowplayer.
