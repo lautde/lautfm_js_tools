@@ -2,7 +2,7 @@ h1. laut.fm Javascript API Tools
 
 Javascript-Bibliothek zur Benutzung der "laut.fm API":http://api.laut.fm.
 
-Achtung: Beta-Software. Bei Problemen bitte "Issue öffnen":https://github.com/lautde/lautfm_js_tools/issues oder im "laut.fm Mixxt Forum melden":http://laut.fm.mixxt.de/.
+Achtung: Beta-Software. Bei Problemen bitte "Issue öffnen":https://github.com/lautde/lautfm_js_tools/issues oder im "laut.fm Forum melden":http://forum.laut.fm/.
 
 
 h2. Features
