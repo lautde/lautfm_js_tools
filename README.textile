@@ -11,14 +11,11 @@ h2. Features
 * Uhrzeiten werden in Javascript Time-Objekte konvertiert.
 * Einzel-Stations-Infos und Song-Infos können automatisch wiederholt abgerufen werden.
 * Uhrzeit-Unterschiede zwischen Server und Client werden erkannt und die nötigen Offsets automatisch eingerechnet.
-* Ein UI-loser "flowplayer":http://flowplayer.org wird in einem Player-Objekt bereitgestellt, gesteuert über eine Javascript-Schnittstelle. Es können Songwechsel-Callbacks angegeben werden.
 * Keine weiteren Abhängigkeiten
 
 
 h2. Convenience
 
-* "Crockfords JSON2.js Bibliothek":https://github.com/douglascrockford/JSON-js/raw/master/json2.js ist enthalten. Sie stellt im Wesentlich @JSON.stringify()@ und @JSON.parse()@ zur Verfügung.
-* Die "Flowplayer Javascript Bibliothek":http://static.flowplayer.org/js/flowplayer-3.2.6.min.js ist enthalten. Sie beinhaltet Javascript-Bridge für den Flowplayer.
 * Der Array-Prototyp wird mit @forEach()@ erweitert. (siehe "tutorialspoint.com":http://www.tutorialspoint.com/javascript/array_foreach.htm).
 * Zeiten haben @humanTimeShort()@ und @humanTimeLong()@ für Uhrzeiten ala "12:34" und "12:34:56".
 
@@ -173,21 +170,13 @@ TODO: Doku
 
 * laut.fm.search.stations(QUERY)
 
-h3. Der Player
-
-TODO: Doku
-
-* laut.fm.player
-
-
-
 h2. Release History
 
+* 2019-02-27 0.10.0 removed player (incl. flowplayer) and JSON polyfill
 * 2017-01-27 0.9.1 https support all over.
 * 2012-10-23 0.8.0 next_arists support. in production on the official laut.fm website.
 * 2012-03-26 0.7.0 added auto updates
 * 2012-03-26 0.6.0 all listeners bug fix
 * 2011-11-23 0.3.0 added experimental templating support. in production on the laut.de website.
 * 2011-11-21 0.2.0 first official release
-
 
