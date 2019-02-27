@@ -8,20 +8,14 @@
   <body>
     <div id="container"></div>
     
-    <script>
+    <script type="text/javascript" charset="utf-8">
       var container = document.getElementById('container');
       
-      var show_genres = function(genres){
-        var buffer = [];
-        
-        genres.forEach(function(genre){
-          buffer.push(genre.name);
-        })
-        
-        container.innerHTML = buffer.join(', ')
+      var show_time = function(time){
+        container.innerHTML = time;
       }
       
-      laut.fm.genres(show_genres);
+      laut.fm.time(show_time);
     </script>
     
   </body>

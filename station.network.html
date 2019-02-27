@@ -8,24 +8,25 @@
   <body>
     <div id="container"></div>
     
-    <script>
+    <script type="text/javascript" charset="utf-8">
       var container = document.getElementById('container');
       
-      var show_schedule = function(schedule){
+      var show_network = function(network){
         var buffer = [];
         
-        schedule.forEach(function(playlist){
+        network.forEach(function(recommendation){
           buffer.push('<ul>');
-          for (attr in playlist) {
-            buffer.push('<li>', attr, ': ', playlist[attr], '</li>');
+          for (attr in recommendation.station) {
+            buffer.push('<li>', attr, ': ', recommendation.station[attr], '</li>');
           }
+          buffer.push('<li>comment: ', recommendation.comment, '</li>');
           buffer.push('</ul>');
         })
-          
+        
         container.innerHTML = buffer.join('');
       };
       
-      laut.fm.station('disco').schedule(show_schedule);
+      laut.fm.station('deepgroove').network(show_network);
     </script>
     
   </body>
