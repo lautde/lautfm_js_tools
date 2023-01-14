@@ -56,23 +56,23 @@ h3. Allgmeine Resourcen
 
 <pre><code>laut.fm.server_status(CALLBACK_OR_OPTIONS)</code></pre>
 
-* "Demo":http://lautde.github.com/lautfm_js_tools/server_status.html ("API URL":http://api.laut.fm/server_status)
+* "Demo":http://lautde.github.io/lautfm_js_tools/server_status.html ("API URL":http://api.laut.fm/server_status)
 
 <pre><code>laut.fm.letters(CALLBACK_OR_OPTIONS)</code></pre>
 
-* "Demo":http://lautde.github.com/lautfm_js_tools/letters.html ("API URL":http://api.laut.fm/letters)
+* "Demo":http://lautde.github.io/lautfm_js_tools/letters.html ("API URL":http://api.laut.fm/letters)
 
 <pre><code>laut.fm.genres(CALLBACK_OR_OPTIONS)</code></pre>
 
-* "Demo":http://lautde.github.com/lautfm_js_tools/genres.html ("API URL":http://api.laut.fm/genres)
+* "Demo":http://lautde.github.io/lautfm_js_tools/genres.html ("API URL":http://api.laut.fm/genres)
 
 <pre><code>laut.fm.station_names(CALLBACK_OR_OPTIONS)</code></pre>
 
-* "Demo":http://lautde.github.com/lautfm_js_tools/station_names.html ("API URL":http://api.laut.fm/station_names)
+* "Demo":http://lautde.github.io/lautfm_js_tools/station_names.html ("API URL":http://api.laut.fm/station_names)
 
 <pre><code>laut.fm.listeners(CALLBACK_OR_OPTIONS)</code></pre>
 
-* "Demo":http://lautde.github.com/lautfm_js_tools/listeners.html ("API URL":http://api.laut.fm/listeners)
+* "Demo":http://lautde.github.io/lautfm_js_tools/listeners.html ("API URL":http://api.laut.fm/listeners)
 
 
 h3. Stations-Auflistungen
@@ -83,68 +83,68 @@ Alle Stations-Auflistungen funktionieren mit Optionen zur Paginierung:
 
 <pre><code>laut.fm.stations.all(CALLBACK_OR_OPTIONS[, OPTIONS])</code></pre>
 
-* "Demo":http://lautde.github.com/lautfm_js_tools/stations.all.html ("API URL":http://api.laut.fm/stations)
-* "Demo mit limit":http://lautde.github.com/lautfm_js_tools/stations.all_limit10.html ("API URL":http://api.laut.fm/stations?limit=10)
-* "Demo mit limit und offset":http://lautde.github.com/lautfm_js_tools/stations.all_limit10_offset25.html ("API URL":http://api.laut.fm/stations?limit=10&offset=25)
+* "Demo":http://lautde.github.io/lautfm_js_tools/stations.all.html ("API URL":http://api.laut.fm/stations)
+* "Demo mit limit":http://lautde.github.io/lautfm_js_tools/stations.all_limit10.html ("API URL":http://api.laut.fm/stations?limit=10)
+* "Demo mit limit und offset":http://lautde.github.io/lautfm_js_tools/stations.all_limit10_offset25.html ("API URL":http://api.laut.fm/stations?limit=10&offset=25)
 
 <pre><code>laut.fm.stations.letter(LETTER, CALLBACK_OR_OPTIONS[, OPTIONS])</code></pre>
 
-* "Demo":http://lautde.github.com/lautfm_js_tools/stations.letter_b.html ("API URL":http://api.laut.fm/stations/letter/b)
-* "Demo mit limit":http://lautde.github.com/lautfm_js_tools/stations.letter_b_limit10.html ("API URL":http://api.laut.fm/stations/letter/b?limit=10)
-* "Demo mit limit und offset":http://lautde.github.com/lautfm_js_tools/stations.letter_b_limit10_offset5.html ("API URL":http://api.laut.fm/stations/letter/b?limit=10&offset=5)
-* "Demo mit Zahl":http://lautde.github.com/lautfm_js_tools/stations.letter_hash.html ("API URL":http://api.laut.fm/stations/numbers)
+* "Demo":http://lautde.github.io/lautfm_js_tools/stations.letter_b.html ("API URL":http://api.laut.fm/stations/letter/b)
+* "Demo mit limit":http://lautde.github.io/lautfm_js_tools/stations.letter_b_limit10.html ("API URL":http://api.laut.fm/stations/letter/b?limit=10)
+* "Demo mit limit und offset":http://lautde.github.io/lautfm_js_tools/stations.letter_b_limit10_offset5.html ("API URL":http://api.laut.fm/stations/letter/b?limit=10&offset=5)
+* "Demo mit Zahl":http://lautde.github.io/lautfm_js_tools/stations.letter_hash.html ("API URL":http://api.laut.fm/stations/numbers)
 
 <pre><code>laut.fm.stations.numbers(CALLBACK_OR_OPTIONS[, OPTIONS])</code></pre>
 
-* "Demo":http://lautde.github.com/lautfm_js_tools/stations.numbers.html ("API URL":http://api.laut.fm/stations/numbers)
+* "Demo":http://lautde.github.io/lautfm_js_tools/stations.numbers.html ("API URL":http://api.laut.fm/stations/numbers)
 
 <pre><code>laut.fm.stations.genre(GENRE, CALLBACK_OR_OPTIONS[, OPTIONS])</code></pre>
 
 @GENRE@ muss eins der Genres von @laut.fm.genres()@ sein.
 
-* "Demo":http://lautde.github.com/lautfm_js_tools/stations.genre_ROCK.html ("API URL":http://api.laut.fm/stations/genre/Rock)
-* "Demo mit limit":http://lautde.github.com/lautfm_js_tools/stations.genre_ROCK_limit10.html ("API URL":http://api.laut.fm/stations/genre/Rock?limit=10)
-* "Demo mit limit und offset":http://lautde.github.com/lautfm_js_tools/stations.genre_ROCK_limit10_offset25.html ("API URL":http://api.laut.fm/stations/genre/Rock?limit=10&offset=25)
+* "Demo":http://lautde.github.io/lautfm_js_tools/stations.genre_ROCK.html ("API URL":http://api.laut.fm/stations/genre/Rock)
+* "Demo mit limit":http://lautde.github.io/lautfm_js_tools/stations.genre_ROCK_limit10.html ("API URL":http://api.laut.fm/stations/genre/Rock?limit=10)
+* "Demo mit limit und offset":http://lautde.github.io/lautfm_js_tools/stations.genre_ROCK_limit10_offset25.html ("API URL":http://api.laut.fm/stations/genre/Rock?limit=10&offset=25)
 
 <pre><code>laut.fm.stations.names(NAMES, CALLBACK_OR_OPTIONS)</code></pre>
 
 @NAMES@ müssen Sendernamen sein, als String Komma-separiert oder als Array.
 
-* "Demo":http://lautde.github.com/lautfm_js_tools/stations.names.html ("API URL":http://api.laut.fm/stations/eins,deepgroove,best_of_80s)
+* "Demo":http://lautde.github.io/lautfm_js_tools/stations.names.html ("API URL":http://api.laut.fm/stations/eins,deepgroove,best_of_80s)
 
 
 h3. Einzel-Stations-Infos
 
 <pre><code>laut.fm.station('NAME').info(CALLBACK_OR_OPTIONS)</code></pre>
 
-* "Demo":http://lautde.github.com/lautfm_js_tools/station.info.html ("API URL":http://api.laut.fm/station/eins)
+* "Demo":http://lautde.github.io/lautfm_js_tools/station.info.html ("API URL":http://api.laut.fm/station/eins)
 
 <pre><code>laut.fm.station(NAME).current_song(CALLBACK_OR_OPTIONS)</code></pre>
 
-* "Demo":http://lautde.github.com/lautfm_js_tools/station.current_song.html ("API URL":http://api.laut.fm/station/eins/current_song)
-* "Demo Template Support und Autoupdate":http://lautde.github.com/lautfm_js_tools/station.current_song_template_auto.html
+* "Demo":http://lautde.github.io/lautfm_js_tools/station.current_song.html ("API URL":http://api.laut.fm/station/eins/current_song)
+* "Demo Template Support und Autoupdate":http://lautde.github.io/lautfm_js_tools/station.current_song_template_auto.html
 
 <pre><code>laut.fm.station(NAME).last_songs(CALLBACK_OR_OPTIONS)</code></pre>
 
-* "Demo":http://lautde.github.com/lautfm_js_tools/station.last_songs.html ("API URL":http://api.laut.fm/station/eins/last_songs)
-* "Demo Template Support und Autoupdate":http://lautde.github.com/lautfm_js_tools/station.last_songs_template_auto.html
+* "Demo":http://lautde.github.io/lautfm_js_tools/station.last_songs.html ("API URL":http://api.laut.fm/station/eins/last_songs)
+* "Demo Template Support und Autoupdate":http://lautde.github.io/lautfm_js_tools/station.last_songs_template_auto.html
 
 <pre><code>laut.fm.station(NAME).next_artists(CALLBACK_OR_OPTIONS)</code></pre>
 
-* "Demo":http://lautde.github.com/lautfm_js_tools/station.next_artists.html ("API URL":http://api.laut.fm/station/eins/next_artists)
-* "Demo mit Autoupdate":http://lautde.github.com/lautfm_js_tools/station.next_artists_auto.html
+* "Demo":http://lautde.github.io/lautfm_js_tools/station.next_artists.html ("API URL":http://api.laut.fm/station/eins/next_artists)
+* "Demo mit Autoupdate":http://lautde.github.io/lautfm_js_tools/station.next_artists_auto.html
 
 <pre><code>laut.fm.station(NAME).playlists(CALLBACK_OR_OPTIONS)</code></pre>
 
-* "Demo":http://lautde.github.com/lautfm_js_tools/station.playlists.html ("API URL":http://api.laut.fm/station/disco/playlists)
+* "Demo":http://lautde.github.io/lautfm_js_tools/station.playlists.html ("API URL":http://api.laut.fm/station/disco/playlists)
 
 <pre><code>laut.fm.station(NAME).schedule(CALLBACK_OR_OPTIONS)</code></pre>
 
-* "Demo":http://lautde.github.com/lautfm_js_tools/station.schedule.html ("API URL":http://api.laut.fm/station/disco/schedule)
+* "Demo":http://lautde.github.io/lautfm_js_tools/station.schedule.html ("API URL":http://api.laut.fm/station/disco/schedule)
 
 <pre><code>laut.fm.station(NAME).listeners(CALLBACK_OR_OPTIONS)</code></pre>
 
-* "Demo":http://lautde.github.com/lautfm_js_tools/station.listeners.html ("API URL":http://api.laut.fm/station/best_of_80s/listeners)
+* "Demo":http://lautde.github.io/lautfm_js_tools/station.listeners.html ("API URL":http://api.laut.fm/station/best_of_80s/listeners)
 
 
 h3. Einzel-Stations-Infos mit Auto-Update
@@ -153,7 +153,7 @@ Wird den Funktionen @info@, @current_song@, @last_songs@ oder @next_artists@ als
 
 <pre><code>laut.fm.station(NAME).current_song(CALLBACK_OR_OPTIONS, true)</code></pre>
 
-* "Demo":http://lautde.github.com/lautfm_js_tools/station.current_song_auto.html ("API URL":http://api.laut.fm/station/maxeinsdreissig/current_song)
+* "Demo":http://lautde.github.io/lautfm_js_tools/station.current_song_auto.html ("API URL":http://api.laut.fm/station/maxeinsdreissig/current_song)
 
 Wechselt man zum Beispiel die current_song-Anzeige zwischen mehreren Stationen, kann man das Autoupdate wieder canceln:
 
